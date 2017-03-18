@@ -33,14 +33,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView2"
         android:layout_width="70dp"
         android:layout_height="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
         android:text="Mode:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/spinner"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -69,16 +69,13 @@
         android:id="@+id/spinner"
         android:layout_width="259dp"
         android:layout_height="46dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView3"
-        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/workAddress"
-        app:layout_constraintHorizontal_bias="0.521" />
+        app:layout_constraintTop_toBottomOf="@+id/workAddress" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Splendid!"
@@ -90,5 +87,53 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/arrivalTimeButton"
+        android:layout_width="173dp"
+        android:layout_height="46dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/departureTimeButton"
+        app:layout_constraintLeft_toRightOf="@+id/editText"
+        android:layout_marginLeft="8dp" />
+
+    <Button
+        android:id="@+id/departureTimeButton"
+        android:layout_width="173dp"
+        android:layout_height="46dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintLeft_toRightOf="@+id/editText2"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="117dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Departure:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/arrivalTimeButton"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="117dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Arrival:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/departureTimeButton"
+        android:layout_marginBottom="-8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
