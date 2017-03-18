@@ -6,7 +6,7 @@ import com.google.common.base.Optional;
 import org.joda.time.LocalTime;
 
 import giraffedatadinosaur.commuterpal.callback.Suggestions;
-import io.urbanthings.api.transit.model.VehicleType;
+import giraffedatadinosaur.commuterpal.enums.Transport;
 
 /**
  * Created by Daniel on 18/03/2017.
@@ -31,7 +31,7 @@ public interface FrontEndUserSetup {
      * Mode of transport
      * @param vehicleType
      */
-    void setMode(VehicleType vehicleType);
+    void setMode(Transport vehicleType);
 
     /**
      * Time of arrival
