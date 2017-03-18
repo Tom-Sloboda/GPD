@@ -1,4 +1,4 @@
-package giraffedatadinosaur.commuterpal.sheduler;
+package giraffedatadinosaur.commuterpal.scheduler;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

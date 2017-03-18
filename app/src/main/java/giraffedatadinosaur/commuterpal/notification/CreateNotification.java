@@ -1,8 +1,8 @@
 package giraffedatadinosaur.commuterpal.notification;
 
-import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.NotificationCompat;
@@ -24,7 +24,7 @@ public class CreateNotification {
         return notificationCount++;
     }
 
-    public void createNotification(Activity activity, String updateMessage){
+    public void createNotification(Context activity, String updateMessage){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(activity);
         builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
         Intent intent = new Intent(activity, MainActivity.class);

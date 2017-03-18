@@ -1,14 +1,21 @@
-package giraffedatadinosaur.commuterpal.sheduler;
-        import android.app.AlarmManager;
-        import android.app.PendingIntent;
-        import android.content.BroadcastReceiver;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.os.PowerManager;
-        import android.widget.Toast;
+package giraffedatadinosaur.commuterpal.scheduler;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.PowerManager;
+
+import giraffedatadinosaur.commuterpal.notification.CreateNotification;
 
 public class Alarm extends BroadcastReceiver
 {
+
+    private CreateNotification createNotification = new CreateNotification();
+
+
+
     @Override
     public void onReceive(Context context, Intent intent)
     {
@@ -16,8 +23,9 @@ public class Alarm extends BroadcastReceiver
         PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "");
         wl.acquire();
 
-        // Put here YOUR code.
-        Toast.makeText(context, "Alarm !!!!!!!!!!", Toast.LENGTH_LONG).show(); // For example
+
+        createNotification.createNotification(context, "result");
+
 
         wl.release();
     }
@@ -37,4 +45,5 @@ public class Alarm extends BroadcastReceiver
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(sender);
     }
+
 }
