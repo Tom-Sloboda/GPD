@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="CREATE NOTIFICATION"
         android:onClick="sendNotification"
-        android:id="@+id/button"
+        android:id="@+id/submit"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

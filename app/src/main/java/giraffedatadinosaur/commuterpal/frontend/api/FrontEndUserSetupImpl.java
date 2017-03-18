@@ -4,6 +4,8 @@ package giraffedatadinosaur.commuterpal.frontend.api;
 import com.google.common.base.Optional;
 
 import org.joda.time.LocalTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import giraffedatadinosaur.commuterpal.callback.Suggestions;
 import giraffedatadinosaur.commuterpal.enums.Transport;
@@ -19,6 +21,8 @@ import io.urbanthings.api.transit.model.PlacePoint;
 public class FrontEndUserSetupImpl implements FrontEndUserSetup {
 
     private final ResolvePlacePointFromAddress addressResolver = new ResolvePlacePointFromAddress();
+
+    private static final DateTimeFormatter fmt = DateTimeFormat.forPattern("HH:mm");
 
     public Optional<Suggestions<String>> setHomeAddress(String address){
         try {
@@ -40,16 +44,20 @@ public class FrontEndUserSetupImpl implements FrontEndUserSetup {
         return Optional.absent();
     }
 
-    public void setArrivalTime(LocalTime time){
+    public void setArrivalTime(String timeString){
+        LocalTime time = fmt.parseLocalTime(timeString);
         UserData.instance().setArrivalToWork(time);
     }
 
-    public void setDepartureTime(LocalTime time){
+    public void setDepartureTime(String timeString){
+        LocalTime time = fmt.parseLocalTime(timeString);
         UserData.instance().setDepartureTime(time);
     }
 
-    public void setMode(Transport vehicleType){
-        UserData.instance().setMode(vehicleType);
+    public void setMode(String vehicleType){
+        UserData.instance().setMode(Transport.valueOf(vehicleType));
     }
+
+
 
 }
