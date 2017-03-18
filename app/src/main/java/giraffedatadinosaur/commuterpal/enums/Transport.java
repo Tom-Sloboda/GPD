@@ -5,8 +5,11 @@ package giraffedatadinosaur.commuterpal.enums;
  */
 
 public enum Transport {
-    CAR("car"), BUS("bus"), TRAIN("train"), BIKE("bike"),
-    WALK("bike");
+    CAR("Car"),
+    BUS("Bus"),
+    TRAIN("Train"),
+    BIKE("Bike"),
+    WALK("Walk");
 
 
     private String name;
@@ -15,7 +18,8 @@ public enum Transport {
         this.name = name;
     }
 
-    public String getName(){
+    @Override
+    public String toString(){
         return name;
     }
 
