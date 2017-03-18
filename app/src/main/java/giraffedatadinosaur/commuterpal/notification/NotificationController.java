@@ -28,7 +28,7 @@ public void createDelayedNotification(Transport transportType, View view){
 //    builder.setContentIntent(pendingIntent);
 //    builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
     builder.setContentTitle("Commute Update");
-    builder.setContentText("Your " + transportType.getName() + " is on delayed.");
+    builder.setContentText("Your " + transportType.toString() + " is on delayed.");
 
     NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
@@ -48,7 +48,7 @@ public void createDelayedNotification(Transport transportType, View view){
 //        builder.setContentIntent(pendingIntent);
         builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
         builder.setContentTitle("Commute Update");
-        builder.setContentText("Your " + transportType.getName() + " is on time.");
+        builder.setContentText("Your " + transportType.toString() + " is on time.");
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
