@@ -5,6 +5,18 @@ package giraffedatadinosaur.commuterpal.enums;
  */
 
 public enum Transport {
-    CAR, BUS, TRAIN, BIKE,
-    WALK
+    CAR("car"), BUS("bus"), TRAIN("train"), BIKE("bike"),
+    WALK("bike");
+
+
+    private String name;
+
+    Transport(String name) {
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+
 }
