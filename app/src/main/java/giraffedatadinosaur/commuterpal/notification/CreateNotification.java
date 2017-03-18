@@ -16,7 +16,7 @@ import static android.content.Context.NOTIFICATION_SERVICE;
  * Created by Jack Treble on 18/03/2017.
  */
 
-public class CreateNotificationActivity {
+public class CreateNotification {
 
 
     private int notificationCount = 1;

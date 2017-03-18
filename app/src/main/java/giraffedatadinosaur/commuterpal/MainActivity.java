@@ -5,28 +5,27 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import giraffedatadinosaur.commuterpal.enums.Transport;
-import giraffedatadinosaur.commuterpal.notification.NotificationController;
+import giraffedatadinosaur.commuterpal.notification.CreateNotification;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
 
-    private NotificationController notificationController = new NotificationController();
-
+    private CreateNotification createNotification = new CreateNotification();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void sendNotification(View view) {
-
-
-
-        notificationController.createDelayedNotification(Transport.BIKE, view);
+        createNotification.createNotification(this,"123");
+        createNotification.createNotification(this,"456");
+        createNotification.createNotification(this,"789");
+        createNotification.createNotification(this,"000");
 
     }
 
