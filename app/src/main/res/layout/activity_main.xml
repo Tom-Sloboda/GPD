@@ -12,6 +12,7 @@
         android:id="@+id/button2"
         android:layout_width="215dp"
         android:layout_height="45dp"
+        android:onClick="newJourney"
         android:text="Plan A Jorney"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="16dp" />
