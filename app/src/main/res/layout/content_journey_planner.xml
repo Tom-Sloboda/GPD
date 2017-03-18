@@ -9,28 +9,28 @@
     tools:showIn="@layout/activity_journey_planner">
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView3"
+        android:id="@+id/workAddress"
         android:layout_width="262dp"
         android:layout_height="42dp"
-        android:text="AutoCompleteTextView"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/textView5"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
+        android:hint="Type in work address"
+        app:layout_constraintLeft_toRightOf="@+id/textView5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeAddress" />
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
+        android:id="@+id/homeAddress"
         android:layout_width="262dp"
         android:layout_height="42dp"
-        android:text="AutoCompleteTextView"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/textView4"
         android:layout_marginLeft="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="Type in home address"
+        app:layout_constraintLeft_toRightOf="@+id/textView4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -49,7 +49,7 @@
         android:layout_height="24dp"
         android:text="Work:"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView3"
+        app:layout_constraintBottom_toBottomOf="@+id/workAddress"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -60,7 +60,7 @@
         android:layout_height="24dp"
         android:text="Home:"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/homeAddress"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -74,7 +74,7 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/workAddress"
         app:layout_constraintHorizontal_bias="0.521" />
 
     <Button
@@ -82,6 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Splendid!"
+        android:onClick="submitForm"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
