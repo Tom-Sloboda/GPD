@@ -7,9 +7,6 @@ package giraffedatadinosaur.commuterpal.notification;
 public class NotificationController {
 
 
-Enum TransportType
-
-
     //create notification based on time x mins before transport is going to arrive
 
 public void createDelayedNotification(Transport transportType){
