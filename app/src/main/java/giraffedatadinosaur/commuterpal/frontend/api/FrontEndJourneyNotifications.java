@@ -9,11 +9,11 @@ import io.urbanthings.api.transit.model.Journey;
  * Created by Daniel on 18/03/2017.
  */
 
-public class FrontEndHomeToWorkNotifications implements FrontEndNotifications {
+public class FrontEndJourneyNotifications implements FrontEndNotifications {
 
     private final Resolver<UserData, Journey> responseResolver;
 
-    public FrontEndHomeToWorkNotifications(Resolver<UserData, Journey> responseResolver){
+    public FrontEndJourneyNotifications(Resolver<UserData, Journey> responseResolver){
         this.responseResolver = responseResolver;
     }
 
