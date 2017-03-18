@@ -31,9 +31,13 @@ public class JourneyPlanner extends AppCompatActivity {
         TextView homeAddress = (TextView) findViewById(R.id.homeAddress);
         TextView workAddress = (TextView) findViewById(R.id.workAddress);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        TextView arrivalTime = (TextView) findViewById(R.id.arrivalTime);
+        TextView departureTime = (TextView) findViewById(R.id.departureTime);
 
         frontEndUserSetup.setHomeAddress(String.valueOf(homeAddress.getText()));
         frontEndUserSetup.setWorkAddress(String.valueOf(workAddress.getText()));
         frontEndUserSetup.setMode(((Transport)spinner.getSelectedItem()));
+        frontEndUserSetup.setArrivalTime(String.valueOf(arrivalTime.getText()));
+        frontEndUserSetup.setDepartureTime(String.valueOf(departureTime.getText()));
     }
 }
