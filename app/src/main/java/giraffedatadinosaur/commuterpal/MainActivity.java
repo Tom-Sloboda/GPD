@@ -1,16 +1,20 @@
 package giraffedatadinosaur.commuterpal;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.NotificationCompat;
 import android.view.View;
 
+import giraffedatadinosaur.commuterpal.enums.Transport;
+import giraffedatadinosaur.commuterpal.notification.NotificationController;
+
+
 public class MainActivity extends AppCompatActivity {
+
+
+
+    private NotificationController notificationController = new NotificationController();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,23 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void sendNotification(View view) {
 
-    public void sendNotification() {
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.journaldev.com/"));
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-        builder.setContentIntent(pendingIntent);
-        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
-        builder.setContentTitle("Notifications Title");
-        builder.setContentText("Your notification content here.");
-        builder.setSubText("Tap to view the website.");
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationController.createDelayedNotification(Transport.BIKE, view);
 
-        // Will display the notification in the notification bar
-        notificationManager.notify(1, builder.build());
     }
 
     public void newJourney(View view) {
