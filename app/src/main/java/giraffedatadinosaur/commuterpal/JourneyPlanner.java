@@ -36,7 +36,7 @@ public class JourneyPlanner extends AppCompatActivity {
 
         frontEndUserSetup.setHomeAddress(String.valueOf(homeAddress.getText()));
         frontEndUserSetup.setWorkAddress(String.valueOf(workAddress.getText()));
-        frontEndUserSetup.setMode(((Transport)spinner.getSelectedItem()));
+        frontEndUserSetup.setMode(((String)spinner.getSelectedItem()));
         frontEndUserSetup.setArrivalTime(String.valueOf(arrivalTime.getText()));
         frontEndUserSetup.setDepartureTime(String.valueOf(departureTime.getText()));
     }
