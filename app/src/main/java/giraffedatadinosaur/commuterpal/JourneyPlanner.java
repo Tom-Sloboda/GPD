@@ -1,5 +1,6 @@
 package giraffedatadinosaur.commuterpal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -39,5 +40,8 @@ public class JourneyPlanner extends AppCompatActivity {
         frontEndUserSetup.setMode(((String)spinner.getSelectedItem()));
         frontEndUserSetup.setArrivalTime(String.valueOf(arrivalTime.getText()));
         frontEndUserSetup.setDepartureTime(String.valueOf(departureTime.getText()));
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
