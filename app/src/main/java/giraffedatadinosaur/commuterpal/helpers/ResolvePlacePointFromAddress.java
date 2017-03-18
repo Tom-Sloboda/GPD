@@ -14,8 +14,9 @@ import io.urbanthings.api.transit.model.PlacePointList;
 public class ResolvePlacePointFromAddress implements Resolver<String, PlacePoint>{
 
     public PlacePoint resolve(String address) throws ResolveException{
-
         FutureApiCallback<PlacePointList> callback = new FutureApiCallback<>();
+        TransactionHolder.resolveAddressPoints(address, callback);
+
         List<PlacePoint> places = callback.getResult().getPlacePoints();
 
         if(places.isEmpty()){

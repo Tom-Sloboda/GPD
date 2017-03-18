@@ -3,6 +3,7 @@ package giraffedatadinosaur.commuterpal.model;
 import org.joda.time.LocalTime;
 
 import giraffedatadinosaur.commuterpal.enums.Transport;
+import io.urbanthings.api.transit.model.DirectionsRequest;
 import io.urbanthings.api.transit.model.PlacePoint;
 
 /**
@@ -65,5 +66,21 @@ public class UserData {
 
     public void setDepartureTime(LocalTime departureTime) {
         this.departureTime = departureTime;
+    }
+
+    public DirectionsRequest getToWorkRequest(){
+        DirectionsRequest directionRequest = new DirectionsRequest();
+        directionRequest.setOrigin(home);
+        directionRequest.setDestination(work);
+        directionRequest.setArrivalTime(arrivalToWork.toDateTimeToday().toDate());
+        return directionRequest;
+    }
+
+    public DirectionsRequest getToHomeRequest(){
+        DirectionsRequest directionRequest = new DirectionsRequest();
+        directionRequest.setOrigin(work);
+        directionRequest.setDestination(home);
+        directionRequest.setDepartureTime(departureTime.toDateTimeToday().toDate());
+        return directionRequest;
     }
 }
