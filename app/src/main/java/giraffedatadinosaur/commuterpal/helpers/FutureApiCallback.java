@@ -1,5 +1,9 @@
 package giraffedatadinosaur.commuterpal.helpers;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import giraffedatadinosaur.commuterpal.helpers.resolve.ResolveException;
 import io.urbanthings.api.ApiCallback;
 
@@ -29,14 +33,22 @@ public class FutureApiCallback<T> implements ApiCallback<T> {
         waitLock = false;
     }
 
-    public T getResult() throws ResolveException{
-        while(waitLock){
-            try{
-                Thread.currentThread().wait(100);
-            }catch(InterruptedException e){
-                break;
-            }
+    public T getResult() throws ResolveException {
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        try {
+            service.submit(new Callable<Void>() {
+                public Void call() {
+                    while (waitLock) {
+                        Thread.yield();
+                    }
+                    return null;
+                }
+            }).get();
         }
+    catch(Exception e)
+
+    {
+    }
 
         if(errored){
             throw exception;
