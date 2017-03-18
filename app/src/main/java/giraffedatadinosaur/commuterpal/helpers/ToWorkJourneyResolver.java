@@ -18,7 +18,7 @@ public class ToWorkJourneyResolver implements Resolver<UserData, Journey> {
 
     public Journey resolve(UserData input) throws ResolveException{
         FutureApiCallback<DirectionsResponse> callback = new FutureApiCallback<>();
-
+        callback.onSuccess(new DirectionsResponse());
         TransactionHolder.resolveDirectionResponse(input.getToWorkRequest(), callback);
         List<Journey> journeys = callback.getResult().getJourneys();
         Collections.sort(journeys, new Comparator<Journey>() {

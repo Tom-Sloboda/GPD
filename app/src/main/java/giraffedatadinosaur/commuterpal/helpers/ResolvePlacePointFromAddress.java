@@ -17,6 +17,7 @@ public class ResolvePlacePointFromAddress implements Resolver<String, PlacePoint
         FutureApiCallback<PlacePointList> callback = new FutureApiCallback<>();
         TransactionHolder.resolveAddressPoints(address, callback);
 
+        callback.onSuccess(new PlacePointList());
         List<PlacePoint> places = callback.getResult().getPlacePoints();
 
         if(places.isEmpty()){
