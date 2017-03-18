@@ -3,6 +3,8 @@ package giraffedatadinosaur.commuterpal.helpers;
 import io.urbanthings.api.ApiCallback;
 import io.urbanthings.api.transit.TransitApi;
 import io.urbanthings.api.transit.TransitApiManager;
+import io.urbanthings.api.transit.model.DirectionsRequest;
+import io.urbanthings.api.transit.model.DirectionsResponse;
 import io.urbanthings.api.transit.model.PlacePointList;
 
 /**
@@ -19,11 +21,12 @@ public class TransactionHolder {
         return TransitApiManager.transitApi(BASE_URL, API_KEY);
     }
 
-    public static void resolveStops(ApiCallback<PlacePointList> callback) {
-        resolve().getPlacePointsInRect(LAT, LONG, 10000, "2", 1000, callback);
-    }
 
     public static void resolveAddressPoints(String address, ApiCallback<PlacePointList> callback) {
         resolve().searchPlacePoints(address, LAT, LONG, 1, callback);
+    }
+
+    public static void resolveDirectionResponse(DirectionsRequest directionsRequest, ApiCallback<DirectionsResponse> callback) {
+        resolve().getDirections(directionsRequest, callback);
     }
 }
